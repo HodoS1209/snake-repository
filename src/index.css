@@ -1,0 +1,28 @@
+.xGrid{
+    display: table;
+    border: 3px solid rgb(1, 70, 1);
+    background-color: rgb(13, 141, 13);
+    margin: auto;
+    height: 500px;
+    width: 500px;
+}
+
+.yGrid{
+    display: table-row;
+    height: auto;
+    width: auto;
+   
+}
+
+.tile{
+    display: table-cell;
+    margin: auto;
+    height: auto;
+    width: auto;
+    border:2px solid rgb(66, 194, 66);
+   
+}
+.food{
+    display: table-cell;
+    background-color: red;
+}
