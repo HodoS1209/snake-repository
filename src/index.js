@@ -24,6 +24,7 @@ class Game extends React.Component {
             gridSize: [7, 7],
             snake: [3, 3],
             food: [5, 3],
+            snakeDirection: "East",
         }
     }
 
@@ -39,6 +40,70 @@ class Game extends React.Component {
                 </>
             )
     } 
+
+    componentDidMount() {
+        setInterval(() => this.moveSnake(), 500);
+    }
+
+    moveSnake() {
+        const snakeDefaultCordinates = this.state.snake
+        const snakeX = this.state.snake[0]
+        const snakeY = this.state.snake[1]
+
+        const SnakeXNextPosition = snakeX >= this.state.gridSize[0] - 1 ? 0 : snakeX + 1;
+        this.setState({snake: [SnakeXNextPosition, snakeY]});
+    }
+
+
+
+    moveSnake() {
+
+        switch(this.state.snakeDirection) {
+    
+          case 'East':
+            this.turnRight() {
+                const snakeDefaultCordinates = this.state.snake
+                const snakeX = this.state.snake[0]
+                const snakeY = this.state.snake[1]
+        
+                const SnakeXNextPosition = snakeX >= this.state.gridSize[0] - 1 ? 0 : snakeX + 1;
+                this.setState({snake: [SnakeXNextPosition, snakeY]});
+            };
+            break;
+          
+          case 'West':
+            this.turnLeft();
+            break;
+    
+          case 'North':
+            this.goUp();
+            break;
+    
+          case 'South':
+            this.goDown();
+            break;
+
+          }
+    
+      };
+
+    //   turnRight() {
+         
+    //   }
+    
+
+    //   turnLeft() {
+
+    //   }
+
+    //   goUp() {
+
+    //   }
+
+    //   goDown() {
+
+    //   }
+      
 
 }
 
@@ -59,7 +124,7 @@ class Grid extends React.Component {
                             {gridY.map((gridX,xIndex) => {
                                return <Tile 
                                     X = {xIndex} 
-                                    Y = {yIndex} 
+                                    Y = {yIndex}    
                                     food = {this.props.food}
                                     snake = {this.props.snake}
                                 />
