@@ -1,28 +1,29 @@
-.xGrid{
+.xGrid {
     display: table;
     border: 3px solid rgb(1, 70, 1);
     background-color: rgb(13, 141, 13);
     margin: auto;
-    height: 500px;
-    width: 500px;
+    height: 900px;
+    width: 900px;
 }
 
-.yGrid{
+.yGrid {
     display: table-row;
-    height: auto;
-    width: auto;
-   
 }
 
-.tile{
+.tile {
     display: table-cell;
-    margin: auto;
-    height: auto;
-    width: auto;
     border:2px solid rgb(66, 194, 66);
-   
+    height: 128px;
+    width: 128px;
+    text-align: center;
+    line-height: 128px 
 }
-.food{
-    display: table-cell;
-    background-color: red;
+
+.tile.food {
+    background-color: red; 
+}
+
+.tile.snake {
+    background-color: silver;
 }

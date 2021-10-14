@@ -90,9 +90,9 @@ class Tile extends React.Component {
             let className = `tile ${foodCordinates} ${snakeCordiantes}`;
 
                 return (                          
-                        <div className="tile">
-                            {`${this.props.X} ; ${this.props.Y}`}
-                            {snakeCordiantes ? "SSSSSSSSNAKE" : ""}
+                        <div className={className}>
+                            {snakeCordiantes ? "==>~" : ""}
+                            {foodCordinates ? "Eat Me" : ""}
                         </div>             
                 )                
     }
